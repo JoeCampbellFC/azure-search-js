@@ -55,11 +55,21 @@ app.http('suggest', {
             }
         } catch (error) {
             return {
-                status: 400,
+                headers: {
+                    "Content-type": "application/json"
+                },
+                jsonBody: { 
+                    suggestions: [],
+                    q, 
+                    top,
+                    suggester 
+
+                }
+                /*status: 400,
                 jsonBody: {
                     innerStatusCode: error.statusCode || error.code,
                     error: error.details || error.message
-                }
+                }*/
             }
         }
     }
