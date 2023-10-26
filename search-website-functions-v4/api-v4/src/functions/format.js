@@ -22,7 +22,7 @@ app.http('format', {
             var chuckResults = [];
             const body = await request.json();
             var extractText = ""
-            for (const result of body.body.responsev2.predictionOutput.results) {
+            for (const result of body.responsev2.predictionOutput.results) {
                 for (const line of result.lines) {
                     extractText = extractText + " " + line.text
                 }
