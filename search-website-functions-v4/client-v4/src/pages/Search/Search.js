@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CircularProgress  from '@mui/material/CircularProgress';
 import { useLocation, useNavigate } from "react-router-dom";
-
+import logo from '../../images/fireman-company.png';
 import Results from '../../components/Results/Results';
 import Pager from '../../components/Pager/Pager';
 import Facets from '../../components/Facets/Facets';
@@ -75,25 +75,49 @@ export default function Search() {
       </div>);
   } else {
     body = (
-      <div className="col-md-9">
+      <>
+
+      <div className="col-md-6">
+     
         <Results documents={results} top={top} skip={skip} count={resultCount}></Results>
         <Pager className="pager-style" currentPage={currentPage} resultCount={resultCount} resultsPerPage={resultsPerPage} setCurrentPage={setCurrentPage}></Pager>
       </div>
+      <div className="col-md-3">
+        <span></span>
+      </div>
+      </>
     )
   }
 
   return (
+  <>
+    <header className="header">
+   
+    <div className="row">
+        <div className="col-md-3">
+        <a href="/">
+          <img src={logo} height="75"  alt="Fireman & Company" />
+        </a>
+        </div>
+        <div className="col-md-6">
+        <div className="search-bar">
+            <SearchBar postSearchHandler={postSearchHandler} q={q}></SearchBar>
+          </div>
+        </div>
+        <div className="col-md-3"></div>
+        </div>
+     
+  </header>
     <main className="main main--search container-fluid">
       
       <div className="row">
         <div className="col-md-3">
-          <div className="search-bar">
-            <SearchBar postSearchHandler={postSearchHandler} q={q}></SearchBar>
-          </div>
+          
           <Facets facets={facets} filters={filters} setFilters={setFilters}></Facets>
         </div>
         {body}
       </div>
     </main>
+    </>
   );
 }

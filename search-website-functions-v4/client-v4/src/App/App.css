@@ -1,8 +1,9 @@
 /* Application styles */
 .app {
-    background-color: #fff;
+    background-color: #f2f2f2;
     padding: 0;
     min-width: 375px;
+    font-family: Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
 }
 
 .main--home {

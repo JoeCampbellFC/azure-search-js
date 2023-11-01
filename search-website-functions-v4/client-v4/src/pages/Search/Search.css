@@ -19,5 +19,15 @@
 .search-bar {
     margin: 1em;
     margin-bottom: 1em;
-    margin-top: 2em;
 }
+
+a {
+    text-decoration: none;
+    color:black
+}
+.header {
+    background-color: #141414;
+    color: #eee;
+    padding:10px;
+}
+

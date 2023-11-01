@@ -40,7 +40,11 @@ app.http('search', {
                 skip: skip,
                 includeTotalCount: true,
                 facets: facetNames,
-                filter: filtersExpression
+                filter: filtersExpression,
+                select: ["id","title"],
+                highlightFields: "content",
+                highlightPreTag: "<b>",
+                highlightPostTag: "</b>"
             };
             console.log(searchOptions);
 
@@ -53,7 +57,7 @@ app.http('search', {
             for await (const result of searchResults.results) {
                 output.push(result);
             }
-            console.log(searchResults)
+            console.log(output)
 
             // Logging search results
             context.log(searchResults.count);
@@ -75,6 +79,7 @@ app.http('search', {
             };
 
         } catch (error) {
+            console.log(error.details || error.message)
             return {
                 status: 500,
                 jsonBody: {

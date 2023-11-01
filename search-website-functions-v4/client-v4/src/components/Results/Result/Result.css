@@ -1,7 +1,6 @@
 .result {
-    width: 250px;
+    width: 100%;
     padding: 16px;
-    text-align: center;
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
     margin: 10px;
@@ -27,4 +26,21 @@
     height: auto;
     max-height: 12em;
     vertical-align: middle;
+}
+.highlights {
+    text-overflow: ellipsis;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines you want to display */
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+   
 }
