@@ -104,7 +104,7 @@ export default function Search() {
             <SearchBar postSearchHandler={postSearchHandler} q={q}></SearchBar>
           </div>
         </div>
-        <div className="col-md-3"><AppHeaderAuth /></div>
+        <div className="col-md-3"></div>
         </div>
      
   </header>
