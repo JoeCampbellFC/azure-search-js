@@ -48,6 +48,9 @@ app.http('search', {
             };
             console.log(searchOptions);
 
+
+            //https://gptkb-dtfccxq6x2aiy.search.windows.net/indexes/vectorkbindex/docs?api-version=2023-07-01-Preview&search=When%20was%20the%20Tribute%20Pharmaceuticals%20Subscription%20Agreement%20dated%3F&select=id%2Ctitle&highlight=content&queryLanguage=en-US&queryType=semantic&captions=extractive&answers=extractive%7Ccount-3&semanticConfiguration=default
+            
             // Sending the search request
             const searchResults = await client.search(q, searchOptions);
             console.log(searchResults);

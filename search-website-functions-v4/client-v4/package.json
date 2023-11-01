@@ -2,7 +2,10 @@
   "name": "my-reacte-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:7071",
+  "options": {
+    "allowedHosts": ["localhost", ".localhost"],
+    "proxy": "https://localhost:7071/"
+  },
   "dependencies": {
     "@emotion/styled": "11.10.6",
     "@mui/icons-material": "^5.11.16",
