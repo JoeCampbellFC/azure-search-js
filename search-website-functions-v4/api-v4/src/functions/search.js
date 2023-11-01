@@ -41,7 +41,7 @@ app.http('search', {
                 includeTotalCount: true,
                 facets: facetNames,
                 filter: filtersExpression,
-                select: ["id","title"],
+                select: ["id","title","category"],
                 highlightFields: "content",
                 highlightPreTag: "<b>",
                 highlightPostTag: "</b>"
@@ -49,11 +49,29 @@ app.http('search', {
             console.log(searchOptions);
 
 
-            //https://gptkb-dtfccxq6x2aiy.search.windows.net/indexes/vectorkbindex/docs?api-version=2023-07-01-Preview&search=When%20was%20the%20Tribute%20Pharmaceuticals%20Subscription%20Agreement%20dated%3F&select=id%2Ctitle&highlight=content&queryLanguage=en-US&queryType=semantic&captions=extractive&answers=extractive%7Ccount-3&semanticConfiguration=default
-            
+            //
             // Sending the search request
             const searchResults = await client.search(q, searchOptions);
             console.log(searchResults);
+            var answer = ""
+            if(q.includes("?")) {
+            
+                var surl = "https://" + CONFIG.SearchServiceName + ".search.windows.net/indexes/vectorkbindex/docs?api-version=2023-07-01-Preview&search=" + q + "&queryLanguage=en-US&queryType=semantic&captions=extractive&answers=extractive%7Ccount-3&semanticConfiguration=default"
+
+                const response = await fetch(surl, {
+                    method: "GET",
+                    headers: {
+                    "api-key": CONFIG.SearchApiQueryKey,
+                    }
+                });
+            
+                const r = await response.json();
+                
+                if(r['@search.answers'].length > 0){
+                    answer = r['@search.answers'][0].highlights;
+                }
+                console.log("answer:",answer );
+            }
 
             // Getting results for output
             const output = [];
@@ -74,6 +92,7 @@ app.http('search', {
                     results: output,
                     resultsCount: output.length,
                     facets: searchResults.facets,
+                    answer: answer,
                     q,
                     top,
                     skip,

@@ -2,7 +2,10 @@
   "name": "my-reacte-app",
   "version": "0.1.1",
   "private": true,
-  "proxy": "http://127.0.0.1:7071",
+  "options": {
+    "allowedHosts": ["localhost", ".localhost"],
+    "proxy": "https://localhost:7071/"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "11.10.6",

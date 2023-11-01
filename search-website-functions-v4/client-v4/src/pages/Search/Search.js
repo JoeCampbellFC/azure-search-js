@@ -4,6 +4,7 @@ import CircularProgress  from '@mui/material/CircularProgress';
 import { useLocation, useNavigate } from "react-router-dom";
 import logo from '../../images/fireman-company.png';
 import Results from '../../components/Results/Results';
+import Answer from '../../components/Answer/Answer';
 import Pager from '../../components/Pager/Pager';
 import Facets from '../../components/Facets/Facets';
 import SearchBar from '../../components/SearchBar/SearchBar';
@@ -23,6 +24,7 @@ export default function Search() {
   const [ skip, setSkip ] = useState(new URLSearchParams(location.search).get('skip') ?? 0);
   const [ filters, setFilters ] = useState([]);
   const [ facets, setFacets ] = useState({});
+  const [ answer, setAnswer ] = useState({});
   const [ isLoading, setIsLoading ] = useState(true);
 
   let resultsPerPage = top;
@@ -43,6 +45,7 @@ export default function Search() {
             setResults(response.data.results);
             setFacets(response.data.facets);
             setResultCount(response.data.count);
+            setAnswer(response.data.answer);
             setIsLoading(false);
         } )
         .catch(error => {
@@ -78,7 +81,7 @@ export default function Search() {
       <>
 
       <div className="col-md-6">
-     
+        <Answer answer={answer} ></Answer>
         <Results documents={results} top={top} skip={skip} count={resultCount}></Results>
         <Pager className="pager-style" currentPage={currentPage} resultCount={resultCount} resultsPerPage={resultsPerPage} setCurrentPage={setCurrentPage}></Pager>
       </div>

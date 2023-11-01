@@ -1,0 +1,12 @@
+.answer > span > em {
+    font-weight: bold;
+}
+.answer {
+    width: 100%;
+    padding: 16px;   
+    margin: 10px;
+    margin-bottom: 3px;
+    padding-bottom: 3px;
+    box-sizing: border-box;
+    font-size: 25px;
+}
