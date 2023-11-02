@@ -12,7 +12,7 @@ export default function Result(props) {
     };
 
     return(
-    <div className="">
+   
 
             <div className="answer">
               
@@ -20,6 +20,6 @@ export default function Result(props) {
                          
             </div>
         
-    </div>
+ 
     );
 }

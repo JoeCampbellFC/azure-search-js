@@ -17,6 +17,8 @@
 
 .title-style {
     vertical-align: middle;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .card-img-top {
@@ -37,10 +39,20 @@
 
 .ellipsis {
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Number of lines you want to display */
+    -webkit-line-clamp: 2; /* Number of lines you want to display */
     -webkit-box-orient: vertical;  
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 15px;
+    font-size: 0.75rem;
+    font-weight: 400;
    
+}
+
+.metadata {
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.card-body {
+    padding: 0px;
 }

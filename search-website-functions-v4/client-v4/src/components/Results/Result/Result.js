@@ -19,7 +19,7 @@ export default function Result(props) {
                 <h5 className="title-style">{props.document.document.title}</h5>
                 <span className="ellipsis" dangerouslySetInnerHTML={createMarkup(props.document.highlights.content)}></span>
                 <br/>
-                <span>{props.document.document.category}</span>
+                <span className="metadata">{props.document.document.category}</span>
             </div>
         </a>
     </div>
