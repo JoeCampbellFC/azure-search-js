@@ -24,7 +24,8 @@
     "react-script": "^2.0.5",
     "react-scripts": "^5.0.1",
     "styled-components": "^5.3.9",
-    "web-vitals": "^3.3.1"
+    "web-vitals": "^3.3.1",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.0"
   },
   "scripts": {
     "start": "react-scripts start",
