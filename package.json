@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/node-fetch": "^2.6.8"
   },
   "dependencies": {
     "node-fetch": "^3.3.2"
