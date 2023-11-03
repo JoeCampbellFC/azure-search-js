@@ -2,7 +2,7 @@ const { app } = require('@azure/functions');
 const { CONFIG } = require("../lib/config");
 const { readFacets, createFilterExpression } = require('../lib/azure-cognitive-search');
 const { SearchClient, AzureKeyCredential } = require("@azure/search-documents");
-
+const fetch = require("node-fetch");
 // Create a SearchClient to send queries
 const client = new SearchClient(
     `https://` + CONFIG.SearchServiceName + `.search.windows.net/`,
