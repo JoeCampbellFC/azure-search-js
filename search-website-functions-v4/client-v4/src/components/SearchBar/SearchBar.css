@@ -3,10 +3,13 @@ div.container a.input-group-btn {
 }
 
 .suggestions {
-    position: relative;
+    position: absolute;
     display: inline-block;
     width: inherit;
-    z-index:99
+    z-index:99;
+    background: white;
+    color: black;
+    top:34px;
 }
 
 .input-group {
