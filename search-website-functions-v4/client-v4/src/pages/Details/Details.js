@@ -40,7 +40,7 @@ export default function Details() {
       resultStyle += " active";
       detailsBody = (
         <div className="card-body">
-          <h5 className="card-title">{document.title}</h5>
+          <h5 className="card-title">{document.id}</h5>
           <p className="card-text">{document.content}</p>
 
         </div>
