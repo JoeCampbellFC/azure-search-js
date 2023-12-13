@@ -41,7 +41,7 @@ app.http('search', {
                 includeTotalCount: true,
                 facets: facetNames,
                 filter: filtersExpression,
-                select: ["id","title","category"],
+                select: ["id","category"],
                 highlightFields: "content",
                 highlightPreTag: "<b>",
                 highlightPostTag: "</b>"
