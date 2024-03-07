@@ -56,7 +56,7 @@ app.http('search', {
             var answer = ""
             if(q.includes("?")) {
             
-                var surl = "https://" + CONFIG.SearchServiceName + ".search.windows.net/indexes/vectorkbindex/docs?api-version=2023-07-01-Preview&search=" + q + "&queryLanguage=en-US&queryType=semantic&captions=extractive&answers=extractive%7Ccount-3&semanticConfiguration=default"
+                var surl = "https://" + CONFIG.SearchServiceName + ".search.windows.net/indexes/" + CONFIG.SearchIndexName + "/docs?api-version=2023-07-01-Preview&search=" + q + "&queryLanguage=en-US&queryType=semantic&captions=extractive&answers=extractive%7Ccount-3&semanticConfiguration=default"
 
                 const response = await fetch(surl, {
                     method: "GET",
