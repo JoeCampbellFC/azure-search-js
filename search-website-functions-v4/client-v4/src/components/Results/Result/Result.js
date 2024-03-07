@@ -14,12 +14,12 @@ export default function Result(props) {
     return(
     <div className="card result">
        
-        <a href={`/details/${props.document.document.id}`}>            
+        <a href={`/details/${props.document.document.metadata_storage_path}`}>            
             <div className="card-body">
-                <h5 className="title-style">{props.document.document.id}</h5>
+                <h5 className="title-style">{props.document.document.metadata_storage_name}</h5>
                 <span className="ellipsis" dangerouslySetInnerHTML={createMarkup(props.document.highlights.content)}></span>
                 <br/>
-                <span className="metadata">{props.document.document.category}</span>
+                <span className="metadata"></span>
             </div>
         </a>
     </div>

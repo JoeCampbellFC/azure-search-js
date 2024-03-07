@@ -41,7 +41,7 @@ app.http('search', {
                 includeTotalCount: true,
                 facets: facetNames,
                 filter: filtersExpression,
-                select: ["id","category"],
+                select: ["id","metadata_storage_name"],
                 highlightFields: "content",
                 highlightPreTag: "<b>",
                 highlightPostTag: "</b>"
